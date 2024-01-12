@@ -191,7 +191,6 @@ module SCCB_CTRL(
             if( r_clk_en & r_scl)begin
                 if( ( r_scl_cnt == 5'd0 ) || ( r_scl_cnt == 5'd9 ) )begin
                     case (w_nx_st)
-                        IDLE        : r_sda_buff    <= 8'd0;
                         SLV_ID      : r_sda_buff    <= { P_SLAVE_ADDR, w_rwsel};
                         SLV_ADDR1   : r_sda_buff    <= r_sccb_addr[15:8];
                         SLV_ADDR2   : r_sda_buff    <= r_sccb_addr[ 7:0];
